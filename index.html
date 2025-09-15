@@ -3,88 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nidhi Thakare | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Nidhi Thakare | Data Analytics Portfolio</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; }
+    header { background: #0d6efd; color: white; padding: 20px; text-align: center; }
+    nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
+    section { padding: 40px; max-width: 900px; margin: auto; }
+    h2 { color: #0d6efd; }
+    .project { background: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .project img { max-width: 100%; border-radius: 8px; }
+    footer { background: #0d6efd; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+    button { padding: 10px 15px; background: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #084298; }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>Nidhi Thakare</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section id="home">
-    <div class="hero">
-      <h2>Hi, I'm Nidhi Thakare</h2>
-      <p>Aspiring Electronics and Communication Engineer | Full-Stack Enthusiast</p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
-  </section>
+<header>
+  <h1>Nidhi Thakare</h1>
+  <p>Data Analytics Portfolio</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a 3rd-year BTech student at Tulsiramji Gaikwad Patil College of Engineering and Technology. 
-      I am passionate about technology, problem-solving, and web development. 
-      My goal is to develop impactful solutions using Salesforce CRM and related technologies.
-    </p>
-    <p>Certified in CSS (HackerRank), C/C++ (Itronix). Published research with IJRPR.</p>
-  </section>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a 3rd-year Electronics and Communication Engineering student transitioning into Data Analytics. I aim to combine technical knowledge with analytical skills to create meaningful and impactful solutions.</p>
+</section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div>HTML</div>
-      <div>CSS</div>
-      <div>JavaScript</div>
-      <div>React (Learning)</div>
-      <div>Node.js (Learning)</div>
-      <div>MongoDB (Learning)</div>
-    </div>
-  </section>
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>Excel (Data Cleaning, Pivot Tables)</li>
+    <li>SQL (PostgreSQL, Joins, Window Functions)</li>
+    <li>Python (Pandas, Matplotlib)</li>
+    <li>Power BI (Dashboards, DAX)</li>
+  </ul>
+</section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>Traffic Light Controller Simulation</strong>: A project demonstrating real-time traffic light control logic.
-      </li>
-      <li>
-        <strong>Portfolio Website</strong>: The current website to showcase my journey and work.
-      </li>
-      <li>
-        <strong>Upcoming Projects</strong>: Blog application and e-commerce platform.
-      </li>
-    </ul>
-  </section>
+<section id="projects">
+  <h2>Projects</h2>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="4" required></textarea>
-      
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-  </section>
+  <div class="project">
+    <h3>Sales Analysis Dashboard</h3>
+    <img src="sales_dashboard.png" alt="Sales Dashboard">
+    <p>Analyzed sales performance using SQL, Excel, and Power BI. Built an interactive dashboard to track KPIs.</p>
+    <a href="https://github.com/YOURUSERNAME/sales-analysis" target="_blank"><button>View Project</button></a>
+  </div>
 
-  <footer>
-    <p>© 2024 Nidhi Thakare | All Rights Reserved</p>
-  </footer>
+  <div class="project">
+    <h3>Insurance Management System</h3>
+    <img src="insurance_dashboard.png" alt="Insurance Dashboard">
+    <p>SQL project for managing customer policies, claims, and premium data.</p>
+    <a href="https://github.com/YOURUSERNAME/insurance-system" target="_blank"><button>View Project</button></a>
+  </div>
 
-  <script src="script.js"></script>
+</section>
+
+<section id="resume">
+  <h2>Resume</h2>
+  <a href="Nidhi_Resume.pdf" target="_blank"><button>Download Resume</button></a>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: your.email@example.com</p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/YOURLINKEDIN" target="_blank">linkedin.com/in/YOURLINKEDIN</a></p>
+  <p>GitHub: <a href="https://github.com/YOURUSERNAME" target="_blank">github.com/YOURUSERNAME</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Nidhi Thakare | Data Analytics Portfolio</p>
+</footer>
+
 </body>
 </html>
+
 
