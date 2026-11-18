@@ -9,3 +9,33 @@
 .certificate-pdf b{color:#a99aff;font-size:10px}
 .certificate-status{cursor:pointer;text-decoration:none}
 @media(max-width:700px){.profile-photo-wrap{width:82px;height:108px;top:0;right:9%}.hero-visual{margin-top:48px}.certificate-preview{height:105px}}
+
+/* Dashboard gallery */
+.dashboards-section{border-top:1px solid var(--line)}
+.dashboard-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:38px 0 25px}
+.dashboard-card{padding:22px;border:1px solid var(--line);border-radius:11px;background:linear-gradient(145deg,#111b35,#0d152b);min-height:190px;display:flex;flex-direction:column;transition:.2s}
+.dashboard-card:hover{transform:translateY(-4px);border-color:rgba(105,220,231,.5)}
+.dashboard-card-top{display:flex;justify-content:space-between;color:var(--cyan);font-size:8px;letter-spacing:1.5px}
+.dashboard-card-top b{font-size:22px}
+.dashboard-card h3{font:600 17px var(--display);margin:20px 0 7px}
+.dashboard-card p{color:var(--muted);font-size:11px;margin:0 0 18px}
+.dashboard-card a{color:var(--cyan);font-size:11px;font-weight:700;text-decoration:none;margin-top:auto}
+.dashboard-repo-link{display:inline-flex}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px;align-items:start}
+.contact-layout .contact-links{grid-template-columns:1fr 1fr;margin:0}
+.message-form,.quick-chat form{display:grid;gap:10px;padding:25px;border:1px solid var(--line);border-radius:12px;background:#101831}
+.message-form label,.quick-chat label{font-size:10px;color:#aeb9d3;letter-spacing:.6px}
+.message-form input,.message-form textarea,.quick-chat input,.quick-chat textarea{width:100%;border:1px solid #34415f;border-radius:6px;background:#0b1429;color:#f4f6ff;padding:12px;font:12px var(--font);resize:vertical}
+.message-form input:focus,.message-form textarea:focus,.quick-chat input:focus,.quick-chat textarea:focus{outline:1px solid var(--cyan);border-color:var(--cyan)}
+.message-form small,.quick-chat small{color:#8995b3;font-size:9px;line-height:1.5}
+.chat-launcher{position:fixed;right:24px;bottom:22px;z-index:50;border:1px solid #9b83ff;background:linear-gradient(120deg,#7058d8,#3e5b9e);color:white;border-radius:30px;padding:13px 19px;box-shadow:0 10px 35px #0008;font:600 12px var(--font);cursor:pointer}
+.quick-chat{position:fixed;right:24px;bottom:82px;width:min(350px,calc(100vw - 32px));z-index:51;background:#0b1429;border:1px solid rgba(155,131,255,.55);border-radius:14px;padding:14px;box-shadow:0 20px 70px #000b}
+.quick-chat[hidden]{display:none}
+.quick-chat-head{display:flex;justify-content:space-between;align-items:center;padding:5px 5px 13px}
+.quick-chat-head strong,.quick-chat-head small{display:block}
+.quick-chat-head strong{font:600 16px var(--display)}
+.quick-chat-head small{font-size:10px;color:var(--muted);margin-top:3px}
+.quick-chat-head button{border:0;background:none;color:white;font-size:25px;cursor:pointer}
+.quick-chat form{padding:15px}
+@media(max-width:900px){.dashboard-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.dashboard-grid,.contact-layout,.contact-layout .contact-links{grid-template-columns:1fr}.chat-launcher{right:14px;bottom:14px}.quick-chat{right:14px;bottom:72px}}
