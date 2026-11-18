@@ -3,85 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nidhi Thakare — Data Analytics portfolio showcasing projects, skills, experience and certifications.">
+  <meta name="theme-color" content="#080d20">
   <title>Nidhi Thakare | Data Analytics Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; }
-    header { background: #0d6efd; color: white; padding: 20px; text-align: center; }
-    nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
-    section { padding: 40px; max-width: 900px; margin: auto; }
-    h2 { color: #0d6efd; }
-    .project { background: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .project img { max-width: 100%; border-radius: 8px; }
-    footer { background: #0d6efd; color: white; text-align: center; padding: 15px; margin-top: 20px; }
-    button { padding: 10px 15px; background: #0d6efd; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background: #084298; }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#home"><span class="brand-mark">N</span><span>Nidhi<span class="brand-dot">.</span></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a>
+        <a href="#projects">Projects</a><a href="#education">Education</a><a href="#certifications">Certifications</a><a href="#contact" class="nav-cta">Let's talk <span>↗</span></a>
+      </nav>
+    </header>
 
-<header>
-  <h1>Nidhi Thakare</h1>
-  <p>Data Analytics Portfolio</p>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+    <main>
+      <section class="hero section" id="home">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> OPEN TO DATA ANALYTICS OPPORTUNITIES</div>
+          <p class="hero-kicker">HELLO, I'M</p>
+          <h1>Nidhi<br><span>Thakare.</span></h1>
+          <h2>Data Analyst <span class="muted">|</span> Turning data into decisions.</h2>
+          <p class="hero-description">Electronics & Communication Engineering graduate with hands-on experience in SQL, Excel, Power BI and Python. I enjoy finding patterns in data and turning them into clear, useful insights.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#projects">Explore my work <span>↘</span></a><a class="button button-ghost" href="#contact">Get in touch</a></div>
+          <div class="hero-social"><a href="https://github.com/nidhi192004" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/nidhi-thakare-30004a308" target="_blank" rel="noreferrer">LinkedIn ↗</a><span>Nagpur, India</span></div>
+        </div>
+        <div class="hero-visual" aria-label="Data analytics illustration">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="visual-card main-visual"><div class="visual-top"><span>INSIGHT / 01</span><span class="live-pill">● LIVE MINDSET</span></div><div class="chart-title">From raw data<br>to <em>real impact.</em></div>
+            <div class="chart-bars"><i style="height:34%"></i><i style="height:52%"></i><i style="height:43%"></i><i style="height:70%"></i><i style="height:60%"></i><i style="height:88%"></i><i style="height:76%"></i><i style="height:100%"></i></div><div class="chart-foot"><span>ANALYZE</span><span>VISUALIZE</span><span>DECIDE</span></div></div>
+          <div class="float-chip chip-sql">SQL <b>↗</b></div><div class="float-chip chip-bi">POWER BI <b>▥</b></div><div class="float-chip chip-python">PYTHON <b>⌘</b></div>
+          <div class="hero-orb">DATA<br><strong>✳</strong></div>
+        </div>
+        <a class="scroll-cue" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
+      </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a 3rd-year Electronics and Communication Engineering student transitioning into Data Analytics. I aim to combine technical knowledge with analytical skills to create meaningful and impactful solutions.</p>
-</section>
+      <section class="section about-section" id="about">
+        <div class="section-heading"><p class="eyebrow">01 / A LITTLE ABOUT ME</p><h2>Curious mind.<br><span>Analytical approach.</span></h2></div>
+        <div class="about-content"><p class="lead">I’m a detail-oriented engineering graduate building my career in data analytics.</p><p>My experience includes working with real-world datasets, cleaning and analyzing data, creating dashboards, and communicating findings. I bring a problem-solving mindset, a willingness to learn, and a focus on making information easier to understand.</p><div class="about-facts"><div><strong>9.35</strong><span>CGPA</span></div><div><strong>10K+</strong><span>Records analyzed during internship</span></div><div><strong>2</strong><span>Data analyst internships</span></div></div></div>
+      </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>Excel (Data Cleaning, Pivot Tables)</li>
-    <li>SQL (PostgreSQL, Joins, Window Functions)</li>
-    <li>Python (Pandas, Matplotlib)</li>
-    <li>Power BI (Dashboards, DAX)</li>
-  </ul>
-</section>
+      <section class="section skills-section" id="skills">
+        <div class="section-heading"><p class="eyebrow">02 / MY TOOLKIT</p><h2>Skills that turn<br><span>questions into clarity.</span></h2></div>
+        <div class="skill-grid">
+          <article class="skill-card"><div class="skill-icon">▦</div><h3>Data Analysis</h3><p>Excel · Advanced Excel · Data Cleaning · Data Transformation</p></article>
+          <article class="skill-card"><div class="skill-icon">⌘</div><h3>Programming</h3><p>Python · Pandas · NumPy · Matplotlib · AI/ML Fundamentals</p></article>
+          <article class="skill-card"><div class="skill-icon">▤</div><h3>Databases</h3><p>SQL · PostgreSQL · Joins · Querying</p></article>
+          <article class="skill-card"><div class="skill-icon">◩</div><h3>Visualization</h3><p>Power BI · Tableau · Dashboards · Reports</p></article>
+          <article class="skill-card"><div class="skill-icon">⌁</div><h3>Tools</h3><p>VS Code · GitHub</p></article>
+          <article class="skill-card"><div class="skill-icon">✳</div><h3>Strengths</h3><p>Problem-solving · Communication · Quick learning</p></article>
+        </div>
+      </section>
 
-<section id="projects">
-  <h2>Projects</h2>
+      <section class="section experience-section" id="experience">
+        <div class="section-heading"><p class="eyebrow">03 / WHERE I'VE LEARNED</p><h2>Experience &<br><span>hands-on learning.</span></h2></div>
+        <div class="timeline">
+          <article class="timeline-item"><div class="timeline-date">SEPT – DEC 2025</div><div class="timeline-body"><h3>Data Analyst Intern <span>@ Primine Software Pvt. Ltd.</span></h3><ul><li>Worked on an AI-powered camera surveillance system, analyzing detection data and system performance.</li><li>Cleaned and processed camera event logs to identify patterns and support accuracy improvements.</li><li>Prepared insights and summaries using Excel and Power BI to support model evaluation.</li></ul></div></article>
+          <article class="timeline-item"><div class="timeline-date">JAN – JUNE 2025</div><div class="timeline-body"><h3>Data Analyst Intern <span>@ ARC Technologies</span></h3><ul><li>Gained practical exposure to SQL, Excel, Power BI and Python.</li><li>Analyzed datasets containing 10K+ records to identify patterns and generate business insights.</li><li>Developed interactive dashboards and automated reports to reduce manual effort.</li></ul></div></article>
+        </div>
+      </section>
 
-  <div class="project">
-    <h3>Sales Analysis Dashboard</h3>
-    <img src="sales_dashboard.png" alt="Sales Dashboard">
-    <p>Analyzed sales performance using SQL, Excel, and Power BI. Built an interactive dashboard to track KPIs.</p>
-    <a href="https://github.com/YOURUSERNAME/sales-analysis" target="_blank"><button>View Project</button></a>
+      <section class="section projects-section" id="projects">
+        <div class="section-heading"><p class="eyebrow">04 / SELECTED WORK</p><h2>Projects built with<br><span>purpose & curiosity.</span></h2><p class="section-intro">A selection of my core projects. Choose a project to see its overview and repository.</p></div>
+        <div class="project-grid">
+          <article class="project-card project-featured"><div class="project-art art-camera"><span class="art-label">01 / AI + ANALYTICS</span><div class="camera-frame"><span>● REC</span><div class="tracking-box"></div><b>CAMERA<br>INSIGHTS</b></div></div><div class="project-info"><div class="project-tags"><span>Python</span><span>SQL</span><span>Power BI</span></div><h3>AI-Powered Camera Analytics</h3><p>Analyzing camera surveillance events and system performance to support monitoring and data-driven evaluation.</p><button class="text-link project-open" data-project="camera">View details <span>↗</span></button></div></article>
+          <article class="project-card"><div class="project-art art-sales"><span class="art-label">02 / BUSINESS INTELLIGENCE</span><div class="sales-visual"><div class="sales-number">SALES<br><b>OVERVIEW</b></div><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i></div><div class="mini-line">↗</div></div></div><div class="project-info"><div class="project-tags"><span>SQL</span><span>Excel</span><span>Power BI</span></div><h3>Sales Analytics</h3><p>Analyzed multi-region sales data, automated Excel reporting and created interactive Power BI dashboards.</p><button class="text-link project-open" data-project="sales">View details <span>↗</span></button></div></article>
+          <article class="project-card"><div class="project-art art-insurance"><span class="art-label">03 / DATABASE MANAGEMENT</span><div class="database-visual"><div class="db-cylinder">POLICY<br>DATABASE</div><span class="db-node node-a"></span><span class="db-node node-b"></span><span class="db-node node-c"></span></div></div><div class="project-info"><div class="project-tags"><span>SQL</span><span>Database</span></div><h3>Insurance Management System</h3><p>A SQL-focused project. Open the project repository to explore the available implementation.</p><button class="text-link project-open" data-project="insurance">View details <span>↗</span></button></div></article>
+          <article class="project-card"><div class="project-art art-fraud"><span class="art-label">04 / FINANCIAL ANALYTICS</span><div class="fraud-visual"><div class="shield">✓</div><div class="fraud-lines"><i></i><i></i><i></i><i></i></div><b>TRANSACTION<br>MONITOR</b></div></div><div class="project-info"><div class="project-tags"><span>Data Analysis</span><span>Fraud Detection</span></div><h3>Credit Card Fraud Analysis</h3><p>Explore my credit card fraud analysis project and its supporting work on GitHub.</p><button class="text-link project-open" data-project="fraud">View details <span>↗</span></button></div></article>
+        </div>
+      </section>
+
+      <section class="section education-section" id="education">
+        <div class="section-heading"><p class="eyebrow">05 / EDUCATION</p><h2>The foundation<br><span>behind the data.</span></h2></div>
+        <div class="education-card"><div class="education-year">2022 — 2026</div><div><h3>Bachelor of Technology</h3><p>Electronics & Communication Engineering</p><span>Tulsiramji Gaikwad-Patil College of Engineering and Technology · RTMNU, Nagpur</span></div><strong class="cgpa">9.35 <small>CGPA</small></strong></div>
+        <div class="education-card compact"><div class="education-year">2022</div><div><h3>Higher Secondary Certificate (12th)</h3><span>Shri Shivaji Science College, Nagpur · 71.33%</span></div></div>
+        <div class="education-card compact"><div class="education-year">2020</div><div><h3>Secondary School Certificate (10th)</h3><span>Shri Gajanan High School, Nagpur · 92.00%</span></div></div>
+      </section>
+
+      <section class="section certificates-section" id="certifications">
+        <div class="section-heading"><p class="eyebrow">06 / CONTINUOUS LEARNING</p><h2>Certifications &<br><span>milestones.</span></h2><p class="section-intro">More certificates can be added here as you share them.</p></div>
+        <div class="certificate-grid">
+          <article class="certificate-card"><div class="certificate-logo alison">A<span>✦</span></div><div class="certificate-meta">ALISON · DIPLOMA</div><h3>ISO/IEC 42001:2023 – Artificial Intelligence Management System (AIMS)</h3><p>Alison</p><span class="certificate-status">Certificate received</span></article>
+          <article class="certificate-card"><div class="certificate-logo kaggle">k<span>×</span>G</div><div class="certificate-meta">GOOGLE × KAGGLE</div><h3>5-Day AI Agents Intensive Course</h3><p>December 18, 2025</p><span class="certificate-status">Certificate received</span></article>
+          <article class="certificate-card"><div class="certificate-logo arc">ARC</div><div class="certificate-meta">ARC TECHNOLOGIES</div><h3>Data Analytics Career Program</h3><p>January 2025 – July 2025</p><span class="certificate-status">Certificate received</span></article>
+          <article class="certificate-card"><div class="certificate-logo oracle">ORACLE</div><div class="certificate-meta">ORACLE CLOUD INFRASTRUCTURE</div><h3>2025 Certified Generative AI Professional</h3><p>September 17, 2025</p><span class="certificate-status">Certificate received</span></article>
+        </div>
+      </section>
+
+      <section class="section resume-section" id="resume"><div class="resume-panel"><div><p class="eyebrow">07 / WANT THE DETAILS?</p><h2>Let's make the<br><span>next move count.</span></h2><p>My resume includes my experience, education, skills and project highlights.</p></div><a class="button button-primary" href="https://github.com/nidhi192004" target="_blank" rel="noreferrer">View my GitHub <span>↗</span></a></div></section>
+
+      <section class="section contact-section" id="contact"><div class="section-heading"><p class="eyebrow">08 / SAY HELLO</p><h2>Have a role or project<br><span>in mind?</span></h2><p class="section-intro">I’d be happy to connect and discuss data analytics opportunities.</p></div><div class="contact-links"><a href="mailto:thakrenidhi41@gmail.com"><span>EMAIL</span><strong>thakrenidhi41@gmail.com ↗</strong></a><a href="https://www.linkedin.com/in/nidhi-thakare-30004a308" target="_blank" rel="noreferrer"><span>LINKEDIN</span><strong>Connect with me ↗</strong></a><a href="https://github.com/nidhi192004" target="_blank" rel="noreferrer"><span>GITHUB</span><strong>Explore my repositories ↗</strong></a></div></section>
+    </main>
+    <footer><a class="brand" href="#home"><span class="brand-mark">N</span><span>Nidhi<span class="brand-dot">.</span></span></a><p>Designed with curiosity & built around data. <span>© 2026 Nidhi Thakare</span></p></footer>
   </div>
 
-  <div class="project">
-    <h3>Insurance Management System</h3>
-    <img src="insurance_dashboard.png" alt="Insurance Dashboard">
-    <p>SQL project for managing customer policies, claims, and premium data.</p>
-    <a href="https://github.com/YOURUSERNAME/insurance-system" target="_blank"><button>View Project</button></a>
-  </div>
-
-</section>
-
-<section id="resume">
-  <h2>Resume</h2>
-  <a href="Nidhi_Resume.pdf" target="_blank"><button>Download Resume</button></a>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: your.email@example.com</p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/YOURLINKEDIN" target="_blank">linkedin.com/in/YOURLINKEDIN</a></p>
-  <p>GitHub: <a href="https://github.com/YOURUSERNAME" target="_blank">github.com/YOURUSERNAME</a></p>
-</section>
-
-<footer>
-  <p>© 2025 Nidhi Thakare | Data Analytics Portfolio</p>
-</footer>
-
+  <dialog class="project-modal" id="projectModal"><button class="modal-close" id="modalClose" aria-label="Close dialog">×</button><div class="modal-content"><p class="eyebrow" id="modalEyebrow"></p><h2 id="modalTitle"></h2><div class="project-tags" id="modalTags"></div><p id="modalDescription"></p><div class="modal-note" id="modalNote"></div><div class="modal-actions"><a class="button button-primary" id="modalGithub" href="#" target="_blank" rel="noreferrer">Open GitHub <span>↗</span></a><a class="button button-ghost" href="#contact" id="modalContact">Discuss this project</a></div></div></dialog>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
