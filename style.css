@@ -39,3 +39,16 @@
 .quick-chat form{padding:15px}
 @media(max-width:900px){.dashboard-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.dashboard-grid,.contact-layout,.contact-layout .contact-links{grid-template-columns:1fr}.chat-launcher{right:14px;bottom:14px}.quick-chat{right:14px;bottom:72px}}
+
+.dashboard-preview{height:190px;margin:15px 0 12px;border:1px solid #34415f;border-radius:7px;overflow:hidden;background:#fff}
+.dashboard-preview iframe{width:100%;height:100%;border:0;background:white}
+.certificate-card{position:relative}
+.certificate-preview{height:145px;margin:-1px -1px 17px;width:calc(100% + 2px);border:1px solid #b8c2d2;border-radius:7px;background:#f7f8fb;color:#17223d;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:5px;box-shadow:inset 0 0 0 5px #e7eaf0}
+.certificate-preview span{font:700 12px var(--display);letter-spacing:2px}
+.certificate-preview strong{font:700 22px Georgia,serif;letter-spacing:1px}
+.certificate-preview small{font:600 8px var(--font);letter-spacing:1px;color:#52617b}
+.cert-alison{border-top:8px solid #0c9d67}
+.cert-google{border-top:8px solid #4285f4}
+.cert-arc{border-top:8px solid #c69b45}
+.cert-oracle{border-top:8px solid #c74634}
+@media(max-width:700px){.dashboard-preview{height:170px}}
