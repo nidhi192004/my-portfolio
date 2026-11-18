@@ -103,3 +103,13 @@
 .certificate-detail h3{margin:8px 0;font-size:17px;line-height:1.4}
 .certificate-detail p{margin:8px 0 12px;color:var(--muted,#9aa9c8);font-size:14px;line-height:1.6}
 @media(max-width:800px){.certificate-feature{grid-template-columns:1fr}}
+
+.certificate-image-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.certificate-image-grid .certificate-card{overflow:hidden}
+.certificate-image-grid .cert-crop{display:block;aspect-ratio:16/9;background-image:url("assets/certificates-preview.jpg");background-repeat:no-repeat;background-size:200% 200%;background-color:#f4f4f4;transition:transform .25s ease}
+.certificate-image-grid .cert-crop:hover{transform:scale(1.015)}
+.certificate-image-grid .cert-alison{background-position:0 0}
+.certificate-image-grid .cert-google{background-position:100% 0}
+.certificate-image-grid .cert-arc{background-position:0 100%}
+.certificate-image-grid .cert-oracle{background-position:100% 100%}
+@media(max-width:700px){.certificate-image-grid{grid-template-columns:1fr}}
