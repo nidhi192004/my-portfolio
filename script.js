@@ -93,3 +93,41 @@ if(chatLauncher&&quickChat){
   chatLauncher.setAttribute("aria-expanded","false");
  });
 }
+
+
+const dashboardReports=[["Bike Buyer Data","Customer demographics and bike purchase behaviour.","Bike Buyer Data.pdf","Customer segmentation · Purchase patterns · Sales insights"],["Customer Churn Analysis","Explore customer churn patterns and retention indicators.","Customer Churn Analysis 1.pdf","Churn analysis · Customer retention · Risk patterns"],["E-Commerce Dashboard","A visual overview of e-commerce performance and sales trends.","E-Commerse Dashboard.pdf","Sales trends · E-commerce performance · Business KPIs"],["HR Analytics","Explore workforce metrics and human-resources indicators.","HR Analytics.pdf","Workforce analysis · HR metrics · Employee trends"],["Restaurant Rating Analysis","Understand restaurant ratings and customer preferences.","Restaurant Rating Analysis.pdf","Restaurant ratings · Customer feedback · Dining insights"],["Sales Performance Analysis","Track sales KPIs and performance trends in one report.","Sales Performance Analysis Dashboard.pdf","Sales KPIs · Performance tracking · Trend analysis"],["Water Usage Dashboard","Explore water consumption and usage patterns.","Water Usage Dashboard.pdf","Water consumption · Usage patterns · Resource monitoring"],["Healthcare Analytics","A dashboard exploring healthcare data and operational indicators.","healthcare1.pdf","Healthcare data · Operational indicators · Performance overview"],["Zomato Dining Analytics","Explore dining trends and restaurant analytics.","zomato Dining Analytics.pdf","Dining trends · Restaurant analytics · Ratings"]];
+const dashboardModal=document.getElementById("dashboardModal");
+const pdfjs=window.pdfjsLib;
+if(pdfjs){pdfjs.GlobalWorkerOptions.workerSrc="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";}
+async function renderPdfPreview(url,canvas,maxWidth){
+ if(!pdfjs||!canvas)return;
+ try{
+  const pdf=await pdfjs.getDocument({url,withCredentials:false}).promise;
+  const page=await pdf.getPage(1);
+  const base=page.getViewport({scale:1});
+  const scale=Math.min(maxWidth/base.width,1.5);
+  const viewport=page.getViewport({scale});
+  const ratio=window.devicePixelRatio||1;
+  canvas.width=Math.floor(viewport.width*ratio);canvas.height=Math.floor(viewport.height*ratio);
+  canvas.style.width=viewport.width+"px";canvas.style.height=viewport.height+"px";
+  const ctx=canvas.getContext("2d");ctx.setTransform(ratio,0,0,ratio,0,0);
+  await page.render({canvasContext:ctx,viewport}).promise;
+  const loading=canvas.parentElement.querySelector(".thumb-loading");if(loading)loading.remove();
+ }catch(e){const loading=canvas.parentElement.querySelector(".thumb-loading");if(loading)loading.textContent="Preview unavailable — open full report";}
+}
+document.querySelectorAll(".pdf-thumb").forEach(c=>renderPdfPreview(c.dataset.pdf,c,520));
+const oracleCanvas=document.getElementById("oracleCertificateCanvas");
+if(oracleCanvas)renderPdfPreview(oracleCanvas.dataset.pdf,oracleCanvas,700);
+document.querySelectorAll(".dashboard-details").forEach(btn=>btn.addEventListener("click",async()=>{
+ const r=dashboardReports[Number(btn.dataset.report)];if(!r)return;
+ const url="https://raw.githubusercontent.com/nidhi192004/Power-Bi-Dashboard/main/"+encodeURIComponent(r[2]);
+ document.getElementById("dashboardModalEyebrow").textContent="POWER BI REPORT / "+String(Number(btn.dataset.report)+1).padStart(2,"0");
+ document.getElementById("dashboardModalTitle").textContent=r[0];
+ document.getElementById("dashboardModalDescription").textContent=r[1];
+ const list=document.getElementById("dashboardModalFocus");list.replaceChildren(...r[3].split(" · ").map(x=>{const li=document.createElement("li");li.textContent=x;return li;}));
+ document.getElementById("dashboardOpenPdf").href="https://github.com/nidhi192004/Power-Bi-Dashboard/blob/main/"+encodeURIComponent(r[2]);
+ const canvas=document.getElementById("dashboardModalCanvas");canvas.width=0;canvas.height=0;
+ dashboardModal.showModal();await renderPdfPreview(url,canvas,850);
+}));
+document.getElementById("dashboardModalClose").addEventListener("click",()=>dashboardModal.close());
+dashboardModal.addEventListener("click",e=>{if(e.target===dashboardModal)dashboardModal.close();});
