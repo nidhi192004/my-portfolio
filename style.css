@@ -113,3 +113,44 @@
 .certificate-image-grid .cert-arc{background-position:0 100%}
 .certificate-image-grid .cert-oracle{background-position:100% 100%}
 @media(max-width:700px){.certificate-image-grid{grid-template-columns:1fr}}
+
+
+/* Final polish: certificate gallery */
+.certificates-section .section-heading{max-width:720px;margin-bottom:38px}
+.certificate-image-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:30px}
+.certificate-image-grid .certificate-card{
+ position:relative;display:flex;flex-direction:column;overflow:hidden;min-height:0;
+ padding:0 22px 22px;border:1px solid rgba(176,190,230,.16);border-radius:15px;
+ background:linear-gradient(145deg,rgba(22,34,65,.98),rgba(12,21,43,.98));
+ box-shadow:0 14px 40px rgba(0,0,0,.13);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease
+}
+.certificate-image-grid .certificate-card:hover{transform:translateY(-5px);border-color:rgba(98,217,232,.48);box-shadow:0 18px 45px rgba(0,0,0,.24)}
+.certificate-image-grid .cert-crop{
+ position:relative;display:block;width:calc(100% + 44px);margin:0 -22px 20px;
+ aspect-ratio:16/9;height:auto;border-radius:0;background-image:url("assets/certificates-preview.jpg");
+ background-repeat:no-repeat;background-size:200% 200%;background-color:#f5f6f8;
+ border-bottom:1px solid rgba(176,190,230,.16);transition:filter .25s ease
+}
+.certificate-image-grid .cert-crop:hover{transform:none;filter:brightness(1.04)}
+.certificate-image-grid .certificate-meta{font-size:9px;letter-spacing:1.7px;margin-bottom:9px;color:var(--cyan)}
+.certificate-image-grid .certificate-card h3{font:600 17px/1.4 var(--display);margin:0 0 8px;max-width:520px}
+.certificate-image-grid .certificate-card p{font-size:12px;line-height:1.65;color:var(--muted);margin:0 0 14px}
+.certificate-image-grid .certificate-view{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:auto;padding:9px 0 0;color:var(--cyan);font-size:11px;font-weight:700}
+.certificate-image-grid .certificate-view:hover{color:#fff}
+@media(max-width:700px){.certificate-image-grid{grid-template-columns:1fr;gap:17px}.certificate-image-grid .cert-crop{aspect-ratio:16/9}}
+/* Make the Power BI action unmistakably visible on dark cards */
+.dashboard-card .dashboard-details{
+ display:inline-flex!important;align-items:center;justify-content:center;gap:10px;
+ width:100%;min-height:46px;margin-top:20px;padding:12px 18px;
+ color:#fff!important;background:linear-gradient(110deg,#7864ed,#4d43b5)!important;
+ border:1px solid rgba(185,174,255,.7)!important;border-radius:8px;
+ font-size:12px;font-weight:700;letter-spacing:.2px;
+ box-shadow:0 8px 22px rgba(102,83,214,.25);
+ opacity:1!important;visibility:visible!important
+}
+.dashboard-card .dashboard-details span{color:#fff!important}
+.dashboard-card .dashboard-details:hover{
+ color:#fff!important;background:linear-gradient(110deg,#9582ff,#6354d5)!important;
+ border-color:#c2b8ff!important;transform:translateY(-2px);
+ box-shadow:0 12px 28px rgba(102,83,214,.38)
+}
