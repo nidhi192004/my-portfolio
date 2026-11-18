@@ -1,35 +1,35 @@
 const projectData = {
   camera: {
-    eyebrow: "PROJECT 01 / AI + ANALYTICS",
+    eyebrow: "PROJECT 01 / AI + CAMERA ANALYTICS",
     title: "AI-Powered Camera Analytics",
-    tags: ["Python", "SQL", "Power BI"],
-    description: "An AI-enabled camera surveillance project focused on analyzing camera event data and system performance. During the related internship, I cleaned and processed camera event logs and prepared Excel and Power BI summaries to support model evaluation.",
-    note: "The repository URL for this specific project will be connected after its exact GitHub repository is confirmed.",
+    tags: ["Python", "OpenCV", "PostgreSQL", "Power BI"],
+    description: "A real-time camera analytics project using Python and OpenCV to connect to camera streams, detect motion and faces, capture frames, and record camera events for monitoring and analysis. The related work includes a Power BI report and PostgreSQL event storage.",
+    note: "The matching GitHub repository currently contains exposed camera/database credentials in source files. For your safety, this project link is withheld from public visitors until those credentials are rotated and the repository history is cleaned. Contact me for a project walkthrough.",
     github: "https://github.com/nidhi192004"
   },
   sales: {
     eyebrow: "PROJECT 02 / BUSINESS INTELLIGENCE",
     title: "Sales Analytics",
     tags: ["SQL", "Excel", "Power BI"],
-    description: "Analyzed multi-region sales data, automated reporting in Excel and developed interactive Power BI dashboards. The resume records a 40% reduction in manual reporting effort.",
-    note: "The Sales Performance Analysis Dashboard report is available in the Power-Bi-Dashboard repository.",
+    description: "Analyzed multi-region sales data, automated reporting in Excel and created interactive Power BI dashboards. The resume records a 40% reduction in manual reporting effort.",
+    note: "Explore the Sales Performance Analysis Dashboard and other BI reports in the Power BI repository.",
     github: "https://github.com/nidhi192004/Power-Bi-Dashboard"
   },
   insurance: {
     eyebrow: "PROJECT 03 / DATABASE MANAGEMENT",
     title: "Insurance Management System",
-    tags: ["SQL", "Database"],
-    description: "A SQL project listed in the portfolio project collection. The SQL-TASKS repository is the current repository destination for this project.",
-    note: "Detailed features and database schema will be added after the project files are reviewed.",
+    tags: ["PostgreSQL", "SQL", "PL/pgSQL"],
+    description: "A database project with SQL definitions and procedures for customers, agents, policies, claims and payments, including trigger and reporting examples.",
+    note: "The project SQL file is available in the SQL-TASKS repository.",
     github: "https://github.com/nidhi192004/SQL-TASKS"
   },
   fraud: {
     eyebrow: "PROJECT 04 / FINANCIAL ANALYTICS",
     title: "Credit Card Fraud Analysis",
-    tags: ["Data Analysis", "Fraud Detection"],
-    description: "A core portfolio project. Its detailed tools, workflow and findings will be added once the corresponding project repository and materials are confirmed.",
-    note: "The project-specific repository link is pending confirmation.",
-    github: "https://github.com/nidhi192004"
+    tags: ["Python", "Pandas", "Scikit-learn", "Power BI"],
+    description: "A machine-learning and business-intelligence project using a Kaggle credit-card transaction dataset. The repository README describes exploratory analysis, preprocessing, Logistic Regression classification, evaluation metrics and a Power BI dashboard.",
+    note: "The project README documents 284,807 transactions and 492 fraudulent records in the source dataset.",
+    github: "https://github.com/nidhi192004/Credit-Card-Fraud-Detection-Project"
   }
 };
 const modal = document.getElementById("projectModal");
@@ -56,9 +56,7 @@ document.querySelectorAll(".project-open").forEach(button => {
   });
 });
 document.getElementById("modalClose").addEventListener("click", () => modal.close());
-modal.addEventListener("click", event => {
-  if (event.target === modal) modal.close();
-});
+modal.addEventListener("click", event => { if (event.target === modal) modal.close(); });
 document.getElementById("modalContact").addEventListener("click", () => modal.close());
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
