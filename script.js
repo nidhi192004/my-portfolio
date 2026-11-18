@@ -68,3 +68,28 @@ navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", ()
   navLinks.classList.remove("open");
   menuToggle.setAttribute("aria-expanded", "false");
 }));
+function openEmailDraft(name,email,message){
+ const subject=encodeURIComponent("Portfolio enquiry from "+name);
+ const body=encodeURIComponent("Name: "+name+"\nEmail: "+email+"\n\n"+message);
+ window.location.href="mailto:thakrenidhi41@gmail.com?subject="+subject+"&body="+body;
+}
+document.querySelectorAll("#messageForm,#quickMessageForm").forEach(form=>{
+ form.addEventListener("submit",event=>{
+  event.preventDefault();
+  const data=new FormData(form);
+  openEmailDraft(data.get("name"),data.get("email"),data.get("message"));
+ });
+});
+const chatLauncher=document.getElementById("chatLauncher");
+const quickChat=document.getElementById("quickChat");
+const chatClose=document.getElementById("chatClose");
+if(chatLauncher&&quickChat){
+ chatLauncher.addEventListener("click",()=>{
+  quickChat.hidden=!quickChat.hidden;
+  chatLauncher.setAttribute("aria-expanded",String(!quickChat.hidden));
+ });
+ chatClose.addEventListener("click",()=>{
+  quickChat.hidden=true;
+  chatLauncher.setAttribute("aria-expanded","false");
+ });
+}
