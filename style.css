@@ -239,3 +239,17 @@
 .certificates-dashboard .certificate-view{display:inline-flex;align-items:center;justify-content:center;width:100%;min-height:42px;margin-top:10px;padding:12px 18px;border:0;border-radius:7px;background:linear-gradient(115deg,#9279ff,#6d5ad5);color:#fff!important;font-size:12px;font-weight:700;box-shadow:0 9px 30px rgba(123,98,230,.2);cursor:pointer}
 .certificates-dashboard .certificate-view:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(123,98,230,.35)}
 .certificate-modal-image{background-size:200% 300%;background-repeat:no-repeat;background-position:var(--certificate-position);background-color:#fff}
+
+/* Hard-wired certificate preview asset: no hidden-image or load-event dependency */
+.certificates-dashboard .certificate-thumb{
+ display:block!important;visibility:visible!important;opacity:1!important;
+ min-height:190px;background-image:url("assets/certificates-preview.jpg")!important;
+ background-repeat:no-repeat!important;background-size:200% 300%!important;
+ background-position:var(--certificate-position)!important;background-color:#f7f8fb
+}
+.certificate-modal-image{
+ display:block!important;visibility:visible!important;opacity:1!important;
+ background-image:url("assets/certificates-preview.jpg")!important;
+ background-repeat:no-repeat!important;background-size:200% 300%!important;
+ background-position:var(--certificate-position)!important;background-color:#fff
+}
