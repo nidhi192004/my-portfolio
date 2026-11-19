@@ -138,3 +138,45 @@ document.querySelectorAll(".dashboard-details").forEach(btn=>btn.addEventListene
 }));
 document.getElementById("dashboardModalClose").addEventListener("click",()=>dashboardModal.close());
 dashboardModal.addEventListener("click",e=>{if(e.target===dashboardModal)dashboardModal.close();});
+
+/* Certificates: each dashboard card opens its own crop of the original certificate sheet. */
+(() => {
+ const source=document.getElementById("certificatesSourceImage");
+ const dialog=document.getElementById("certificateModal");
+ if(!source||!dialog)return;
+ const entries=[
+  {issuer:"ALISON · DIPLOMA",title:"ISO/IEC 42001:2023 – Artificial Intelligence Management System (AIMS)",position:"0% 0%"},
+  {issuer:"ORACLE UNIVERSITY",title:"Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",position:"100% 0%"},
+  {issuer:"ARC TECHNOLOGIES & INSTITUTIONS",title:"Data Analytics Career Program",position:"0% 50%"},
+  {issuer:"GOOGLE × KAGGLE",title:"5-Day AI Agents Intensive Course",position:"100% 50%"},
+  {issuer:"TATA × FORAGE",title:"Data Visualisation: Empowering Business with Effective Insights",position:"0% 100%"},
+  {issuer:"DELOITTE × FORAGE",title:"Data Analytics Job Simulation",position:"100% 100%"}
+ ];
+ const thumbs=document.querySelectorAll(".certificate-thumb");
+ const modalImage=document.getElementById("certificateModalImage");
+ const modalTitle=document.getElementById("certificateModalTitle");
+ const modalIssuer=document.getElementById("certificateModalIssuer");
+ function applySource(){
+  if(!source.complete||!source.naturalWidth)return;
+  const url='url("'+source.src+'")';
+  thumbs.forEach(el=>{el.style.backgroundImage=url;});
+  modalImage.style.backgroundImage=url;
+ }
+ if(source.complete)applySource();else source.addEventListener("load",applySource,{once:true});
+ function close(){dialog.close();}
+ document.querySelectorAll(".certificate-view").forEach(button=>{
+  button.addEventListener("click",()=>{
+   const item=entries[Number(button.dataset.certificate)];
+   if(!item)return;
+   modalIssuer.textContent=item.issuer;
+   modalTitle.textContent=item.title;
+   modalImage.style.setProperty("--certificate-position",item.position);
+   modalImage.setAttribute("aria-label",item.title+" certificate");
+   applySource();
+   dialog.showModal();
+  });
+ });
+ document.getElementById("certificateModalClose").addEventListener("click",close);
+ document.getElementById("certificateModalCloseBottom").addEventListener("click",close);
+ dialog.addEventListener("click",event=>{if(event.target===dialog)close();});
+})();
