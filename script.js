@@ -141,9 +141,8 @@ dashboardModal.addEventListener("click",e=>{if(e.target===dashboardModal)dashboa
 
 /* Certificates: each dashboard card opens its own crop of the original certificate sheet. */
 (() => {
- const source=document.getElementById("certificatesSourceImage");
  const dialog=document.getElementById("certificateModal");
- if(!source||!dialog)return;
+ if(!dialog)return;
  const entries=[
   {issuer:"ALISON · DIPLOMA",title:"ISO/IEC 42001:2023 – Artificial Intelligence Management System (AIMS)",position:"0% 0%"},
   {issuer:"ORACLE UNIVERSITY",title:"Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",position:"100% 0%"},
@@ -157,12 +156,11 @@ dashboardModal.addEventListener("click",e=>{if(e.target===dashboardModal)dashboa
  const modalTitle=document.getElementById("certificateModalTitle");
  const modalIssuer=document.getElementById("certificateModalIssuer");
  function applySource(){
-  if(!source.complete||!source.naturalWidth)return;
-  const url='url("'+source.src+'")';
+  const url='url("assets/certificates-preview.jpg")';
   thumbs.forEach(el=>{el.style.backgroundImage=url;});
   modalImage.style.backgroundImage=url;
  }
- if(source.complete)applySource();else source.addEventListener("load",applySource,{once:true});
+ applySource();
  function close(){dialog.close();}
  document.querySelectorAll(".certificate-view").forEach(button=>{
   button.addEventListener("click",()=>{
