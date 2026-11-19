@@ -168,3 +168,43 @@
 .certificates-section .cert-item h3{margin:0 0 7px!important;color:#f3f5ff!important;font:600 15px/1.4 var(--display)!important}
 .certificates-section .cert-description{margin:0!important;color:#a6b0c9!important;font-size:11px!important;line-height:1.65!important}
 @media(max-width:760px){.certificates-section .cert-gallery{grid-template-columns:1fr!important}.certificates-section .cert-gallery-image{min-height:0!important}}
+
+
+/* Certificates section refresh — only affects the certification gallery */
+.certificates-section .certificates-showcase{
+ display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+ gap:28px;align-items:start;margin-top:38px
+}
+.certificates-preview-panel{
+ position:sticky;top:105px;overflow:hidden;border:1px solid rgba(176,190,230,.22);
+ border-radius:18px;background:#f7f8fb;box-shadow:0 18px 48px rgba(0,0,0,.2)
+}
+.certificates-preview-panel img{display:block;width:100%;height:auto;max-height:650px;object-fit:contain;opacity:1;visibility:visible}
+.certificates-preview-panel p{
+ margin:0;padding:14px 18px;background:#101a32;color:#75dce9;
+ font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase
+}
+.certificates-list{display:grid;gap:13px}
+.certificate-entry{
+ display:grid;grid-template-columns:38px minmax(0,1fr);gap:14px;align-items:start;
+ padding:18px;border:1px solid rgba(176,190,230,.17);border-radius:13px;
+ background:linear-gradient(145deg,rgba(20,32,60,.98),rgba(12,21,42,.98));
+ transition:transform .22s ease,border-color .22s ease
+}
+.certificate-entry:hover{transform:translateY(-3px);border-color:rgba(98,217,232,.48)}
+.certificate-entry>span{
+ display:grid;place-items:center;width:36px;height:36px;border-radius:10px;
+ background:rgba(98,217,232,.11);color:#62d9e8;font:700 12px var(--display)
+}
+.certificate-entry p{margin:0 0 6px;color:#62d9e8;font-size:9px;font-weight:700;letter-spacing:1.35px}
+.certificate-entry h3{margin:0 0 7px;color:#f3f5ff;font:600 14px/1.45 var(--display)}
+.certificate-entry small{display:block;color:#a6b0c9;font-size:11px;line-height:1.6}
+@media(max-width:850px){
+ .certificates-section .certificates-showcase{grid-template-columns:1fr}
+ .certificates-preview-panel{position:relative;top:auto}
+}
+@media(max-width:560px){
+ .certificate-entry{grid-template-columns:32px minmax(0,1fr);gap:11px;padding:15px}
+ .certificate-entry>span{width:31px;height:31px}
+ .certificates-preview-panel img{max-height:420px}
+}
