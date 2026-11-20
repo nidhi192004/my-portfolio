@@ -268,3 +268,15 @@
 .certificate-modal-image{aspect-ratio:1.396!important;max-height:68vh!important}
 .certificate-modal-image img{width:200%!important;height:300%!important}
 @media(max-width:600px){.certificate-thumb{height:auto!important;min-height:0!important;aspect-ratio:1.396!important}.certificate-modal-image{aspect-ratio:1.396!important;max-height:62vh!important}}
+
+
+/* Original certificate gallery: display each uploaded asset without sprite cropping. */
+.certificates-dashboard{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.certificate-card{min-width:0;overflow:hidden}
+.certificate-image-button{display:flex;width:calc(100% - 24px);margin:0 12px;padding:0;align-items:center;justify-content:center;overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:10px;background:#f7f8fb;cursor:zoom-in}
+.certificate-original{display:block;width:100%;height:auto;max-height:260px;object-fit:contain;aspect-ratio:auto}
+.certificates-dashboard .certificate-view{width:100%;justify-content:center;min-height:42px;margin-top:10px}
+.certificate-modal-image{display:flex;align-items:center;justify-content:center;width:100%;min-height:200px;max-height:70vh;overflow:auto;background:#fff;border-radius:10px}
+.certificate-modal-image img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain}
+@media(max-width:980px){.certificates-dashboard{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.certificates-dashboard{grid-template-columns:1fr;gap:16px}.certificate-original{max-height:none}}
