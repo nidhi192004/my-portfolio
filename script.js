@@ -139,38 +139,35 @@ document.querySelectorAll(".dashboard-details").forEach(btn=>btn.addEventListene
 document.getElementById("dashboardModalClose").addEventListener("click",()=>dashboardModal.close());
 dashboardModal.addEventListener("click",e=>{if(e.target===dashboardModal)dashboardModal.close();});
 
-/* Certificates: each card displays and opens its matching crop of the six original certificates. */
+/* Certificates: use the six original image files stored in the repository assets folder. */
 (() => {
  const dialog=document.getElementById("certificateModal");
  if(!dialog)return;
  const entries=[
-  {issuer:"ALISON · DIPLOMA",title:"ISO/IEC 42001:2023 – Artificial Intelligence Management System (AIMS)",left:"0%",top:"0%"},
-  {issuer:"ORACLE UNIVERSITY",title:"Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",left:"-100%",top:"0%"},
-  {issuer:"ARC TECHNOLOGIES & INSTITUTIONS",title:"Data Analytics Career Program",left:"0%",top:"-100%"},
-  {issuer:"GOOGLE × KAGGLE",title:"5-Day AI Agents Intensive Course",left:"-100%",top:"-100%"},
-  {issuer:"TATA × FORAGE",title:"Data Visualisation: Empowering Business with Effective Insights",left:"0%",top:"-200%"},
-  {issuer:"DELOITTE × FORAGE",title:"Data Analytics Job Simulation",left:"-100%",top:"-200%"}
+  {issuer:"ALISON · DIPLOMA",title:"ISO/IEC 42001:2023 – Artificial Intelligence Management System (AIMS)",file:"Screenshot 2024-12-30 200848.png"},
+  {issuer:"ORACLE UNIVERSITY",title:"Oracle Cloud Infrastructure 2025 Certified Generative AI Professional",file:"Screenshot 2026-11-18 163253.png"},
+  {issuer:"ARC TECHNOLOGIES & INSTITUTIONS",title:"Data Analytics Career Program",file:"Screenshot 2026-11-18 163337.png"},
+  {issuer:"GOOGLE × KAGGLE",title:"5-Day AI Agents Intensive Course",file:"Screenshot 2026-11-18 163402.png"},
+  {issuer:"TATA × FORAGE",title:"Data Visualisation: Empowering Business with Effective Insights",file:"Screenshot 2026-11-18 163421.png"},
+  {issuer:"DELOITTE × FORAGE",title:"Data Analytics Job Simulation",file:"Screenshot 2026-11-18 163445.png"}
  ];
  const modalImage=document.getElementById("certificateModalImage");
  const modalTitle=document.getElementById("certificateModalTitle");
  const modalIssuer=document.getElementById("certificateModalIssuer");
- document.querySelectorAll(".certificate-view").forEach(button=>{
-  const item=entries[Number(button.dataset.certificate)];
-  const thumb=document.querySelector('.certificate-thumb[data-certificate="'+button.dataset.certificate+'"]');
-  if(thumb&&item){thumb.style.setProperty("--crop-left",item.left);thumb.style.setProperty("--crop-top",item.top);}
-  button.addEventListener("click",()=>{
-   if(!item)return;
-   modalIssuer.textContent=item.issuer;
-   modalTitle.textContent=item.title;
-   modalImage.style.setProperty("--crop-left",item.left);
-   modalImage.style.setProperty("--crop-top",item.top);
-   modalImage.replaceChildren();
-   const image=document.createElement("img");
-   image.src="assets/certificates-preview.jpg";
-   image.alt=item.title+" certificate";
-   modalImage.appendChild(image);
-   dialog.showModal();
-  });
+ function showCertificate(index){
+  const item=entries[index];if(!item)return;
+  modalIssuer.textContent=item.issuer;
+  modalTitle.textContent=item.title;
+  modalImage.replaceChildren();
+  const image=document.createElement("img");
+  image.src="assets/"+encodeURIComponent(item.file);
+  image.alt=item.title+" certificate";
+  image.loading="eager";
+  modalImage.appendChild(image);
+  if(!dialog.open)dialog.showModal();
+ }
+ document.querySelectorAll("[data-certificate]").forEach(control=>{
+  control.addEventListener("click",()=>showCertificate(Number(control.dataset.certificate)));
  });
  function close(){dialog.close();}
  document.getElementById("certificateModalClose").addEventListener("click",close);
